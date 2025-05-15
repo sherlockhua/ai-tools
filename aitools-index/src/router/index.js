@@ -5,6 +5,7 @@ import DashboardView from '../views/DashboardView.vue'
 import FeaturesView from '../views/FeaturesView.vue'
 import PricingView from '../views/PricingView.vue'
 import UploadView from '../views/UploadView.vue'
+import ContactView from '../views/ContactView.vue'; // 导入 ContactView
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
@@ -12,7 +13,7 @@ const routes = [
   { path: '/dashboard', name: 'Dashboard', component: DashboardView },
   { path: '/features', name: 'Features', component: FeaturesView },
   { path: '/pricing', name: 'Pricing', component: PricingView },
-  { path: '/upload', name: 'Upload', component: UploadView },
+  { path: '/contact', name: 'Contact', component: ContactView }, // 添加 Contact 路由
 ]
 
 const router = createRouter({

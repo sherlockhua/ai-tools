@@ -1,83 +1,122 @@
-// Global SCSS styles can go here.
-// For example, you can define CSS variables or base styles.
+// It's recommended to import a modern font like Inter.
+// You can add this to your public/index.html or import it via CSS:
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-// Example: Define some CSS custom properties (variables)
 :root {
-  --color-primary: #007bff;
-  --color-primary-light: #e6f2ff;
-  --color-secondary: #6c757d;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
-  --color-light: #f8f9fa;
-  --color-dark: #343a40;
+  // New Color Palette
+  --color-primary: #3B82F6; // Modern Blue (e.g., Tailwind Blue 500)
+  --color-primary-light: #EFF6FF; // (e.g., Tailwind Blue 50)
+  --color-primary-dark: #1D4ED8; // (e.g., Tailwind Blue 700)
+  --color-primary-rgb: 59, 130, 246;
 
-  --color-text-primary: #212529;
-  --color-text-secondary: #6c757d;
-  --color-text-muted: #868e96;
+  --color-secondary: #6B7280; // Neutral Gray (e.g., Tailwind Gray 500)
+  --color-secondary-light: #F3F4F6; // (e.g., Tailwind Gray 100)
+  --color-secondary-dark: #374151; // (e.g., Tailwind Gray 700)
 
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-disabled: #e9ecef;
+  --color-text-primary: #1F2937; // Dark Gray for text (e.g., Tailwind Gray 800)
+  --color-text-secondary: #4B5563; // Lighter Gray for secondary text (e.g., Tailwind Gray 600)
+  --color-text-muted: #9CA3AF; // Muted Gray (e.g., Tailwind Gray 400)
+  --color-text-on-primary: #FFFFFF; // Text on primary backgrounds
+  --color-text-on-dark: #D1D5DB; // Text on dark backgrounds (e.g., footer)
 
-  --color-border: #dee2e6;
-  --color-error: var(--color-danger);
+  --color-bg-page: #F9FAFB; // Very light page background (e.g., Tailwind Gray 50)
+  --color-bg-card: #FFFFFF; // White for cards, distinct sections
+  --color-bg-header: #FFFFFF; // White header
+  --color-bg-footer: var(--color-text-primary); // Dark footer background
 
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-border: #D1D5DB; // Border color (e.g., Tailwind Gray 300)
+  --color-border-light: #E5E7EB; // Lighter border (e.g., Tailwind Gray 200)
+
+  --color-success: #10B981; // Green for success (e.g., Tailwind Emerald 500)
+  --color-success-rgb: 16, 185, 129;
+  --color-success-light: #D1FAE5; // (e.g., Tailwind Emerald 100)
+
+  --color-error: #EF4444; // Red for error (e.g., Tailwind Red 500)
+  --color-error-rgb: 239, 68, 68;
+  --color-error-light: #FEE2E2; // (e.g., Tailwind Red 100)
+
+  // Typography
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --body-bg: var(--color-bg-primary);
+  // Shadows
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  // Body & Global
+  --body-bg: var(--color-bg-page);
   --body-color: var(--color-text-primary);
 }
 
-body {
+// Reset and Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: var(--font-family-sans-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--body-color);
-  background-color: var(--body-bg);
+  padding: 0;
+}
+
+html {
+  font-size: 16px; // Base font size
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--body-color);
+  background-color: var(--body-bg);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: 2.25rem; } // Adjusted sizes
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
 }
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 1rem; // Adjusted padding
+  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) { // For larger screens, like in TheHeader
-  .container {
-    max-width: 1280px;
-  }
-}
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1280px; } }
 
-// You can also import other SCSS partials here
-// @import 'variables';
-// @import 'mixins';
-// @import 'reboot';
+// Utility classes (optional, but can be helpful)
+.text-primary { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-text-secondary) !important; }
+.bg-primary { background-color: var(--color-primary) !important; }
+// ... add more as needed

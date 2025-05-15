@@ -14,5 +14,33 @@
     "title": "上传您的文件",
     "description": "将文件拖放到此处或点击浏览。",
     "howItWorksTitle": "工作原理"
+  },
+  "contactView": {
+    "title": "联系我们",
+    "subtitle": "我们很乐意收到您的来信！无论您对功能、试用、价格或其他任何方面有疑问，我们的团队都随时准备回答您的所有问题。",
+    "form": {
+      "title": "给我们发送消息",
+      "nameLabel": "全名",
+      "namePlaceholder": "请输入您的全名",
+      "emailLabel": "电子邮件地址",
+      "emailPlaceholder": "请输入您的电子邮件地址",
+      "subjectLabel": "主题",
+      "subjectPlaceholder": "请输入消息主题",
+      "messageLabel": "消息内容",
+      "messagePlaceholder": "请在此处填写您的消息...",
+      "submitButton": "发送消息",
+      "successMessage": "感谢您！您的消息已成功发送。"
+    },
+    "info": {
+      "title": "联系信息",
+      "addressTitle": "我们的办公室",
+      "addressLine1": "创新大道123号",
+      "addressLine2": "科技园，404室，加利福尼亚州 94000，美国",
+      "emailTitle": "电子邮件",
+      "emailAddress": "support@meetmind.com",
+      "phoneTitle": "电话联系",
+      "phoneNumber": "+1 (555) 123-4567",
+      "mapPlaceholder": "地图将在此处显示"
+    }
   }
 }
