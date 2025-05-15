@@ -109,21 +109,26 @@ const handleSubmit = () => {
   display: grid;
   grid-template-columns: 1fr; // 改为单列布局，使子元素垂直堆叠
   gap: 2.5rem; // 行间距保持不变，现在作为垂直间距
+  // 如果希望整个网格区域（包含所有卡片）居中且有最大宽度，可以在这里设置
+  // max-width: 800px; // 例如
+  // margin: 0 auto;   // 例如
 
-  // 由于现在默认就是单列，特定断点下的 grid-template-columns: 1fr; 不再是必需的
-  // 但可以保留 @media 用于调整不同屏幕尺寸下的 gap 或其他属性
   @media (max-width: 992px) {
-    // grid-template-columns: 1fr; // 此行不再改变布局行为
-    gap: 2rem; // 可以在小屏幕上调整垂直间距
+    gap: 2rem; 
   }
 }
 
 .contact-form-container,
-.contact-info-container {
-  padding: 2.5rem; // Increased padding
-  background-color: var(--color-bg-card); // Use card background
-  border-radius: 12px; // Softer radius
-  box-shadow: var(--shadow-lg); // Use defined shadow
+.contact-info-container { // 如果 contact-info-container 也需要同样处理，则此规则同时生效
+  padding: 2.5rem; 
+  background-color: var(--color-bg-card); 
+  border-radius: 12px; 
+  box-shadow: var(--shadow-lg); 
+  // 为 contact-form-container (以及 contact-info-container 如果存在且需要) 设置最大宽度并居中
+  max-width: 720px; // 您可以根据需要调整这个值，例如 600px, 768px 等
+  margin-left: auto;   // 使其在 grid 列内水平居中
+  margin-right: auto;  // 使其在 grid 列内水平居中
+  width: 100%; // 确保在小于 max-width 时仍然是响应式的
 
   h2 {
     font-size: 1.5rem; // Adjusted H2 size
