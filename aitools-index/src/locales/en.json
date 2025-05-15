@@ -1,0 +1,18 @@
+{
+  "header": {
+    "logoText": "MeetMind",
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Start For Free"
+  },
+  "general": {
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "uploadView": {
+    "title": "Upload Your Files",
+    "description": "Drag and drop files here or click to browse.",
+    "howItWorksTitle": "How It Works"
+  }
+}

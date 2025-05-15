@@ -3,16 +3,16 @@
     <nav class="header-nav container">
       <div class="logo">
         <!-- 您可以将下方 router-link 替换为实际的 img 标签和 Logo 图片 -->
-        <router-link to="/" class="logo-link">MeetMind</router-link>
+        <router-link to="/" class="logo-link">{{ $t('header.logoText') }}</router-link>
       </div>
       <ul class="nav-menu">
-        <li v-for="item in menuItems" :key="item.name">
-          <router-link :to="item.path" class="nav-link">{{ item.name }}</router-link>
+        <li v-for="item in menuItems" :key="item.nameKey">
+          <router-link :to="item.path" class="nav-link">{{ $t(item.nameKey) }}</router-link>
         </li>
       </ul>
       <div class="header-actions"> 
         <div class="language-switcher">
-          <select v-model="currentLanguage" @change="handleLanguageChange" class="language-select">
+          <select v-model="locale" class="language-select"> {/* 直接绑定到 i18n 的 locale */}
             <option v-for="lang in availableLanguages" :key="lang.code" :value="lang.code">
               {{ lang.name }}
             </option>
@@ -26,7 +26,7 @@
             </div>
           </template>
           <template v-else>
-            <router-link to="/login" class="login-button">登录</router-link>
+            <router-link to="/login" class="login-button">{{ $t('header.login') }}</router-link>
             <!-- 您也可以使用 BaseButton 组件: <BaseButton variant="primary" @click="goToLogin">登录</BaseButton> -->
           </template>
         </div>
@@ -38,36 +38,38 @@
 <script setup>
 import { ref } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n'; // 导入 useI18n
 
 const router = useRouter();
+const { locale, t } = useI18n(); // 获取 i18n 的 locale 和 t 函数
 
 const isLoggedIn = ref(false);
 
-const menuItems = ref([
-  { name: 'Features', path: '/features' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Contact', path: '/contact' },
+const menuItems = ref([ // 更新为使用翻译键
+  { nameKey: 'header.features', path: '/features' },
+  { nameKey: 'header.pricing', path: '/pricing' },
+  { nameKey: 'header.contact', path: '/contact' },
 ]);
 
-const availableLanguages = ref([
+const availableLanguages = ref([ // 这个列表应与 main.js 中加载的语言一致
   { code: 'en', name: 'English' },
   { code: 'zh-CN', name: '简体中文' },
   { code: 'es', name: 'Español' },
   { code: 'fr', name: 'Français' },
   { code: 'de', name: 'Deutsch' },
-  // 您可以根据需要添加更多语言
 ]);
 
-const currentLanguage = ref('en'); // 默认语言
+// currentLanguage ref 不再需要，直接使用 i18n 的 locale
+// const currentLanguage = ref('en'); 
 
+// handleLanguageChange 函数也不再需要，v-model="locale" 会自动更新
+/*
 function handleLanguageChange(event) {
   const newLang = event.target.value;
-  currentLanguage.value = newLang;
-  // 实际项目中，这里会调用 i18n 库来切换全局语言
-  // 例如: i18n.global.locale.value = newLang;
+  locale.value = newLang; // 更新 i18n 的当前语言
   console.log(`Language changed to: ${newLang}`);
-  // 可能需要重新加载页面或强制组件更新以使 i18n 生效，具体取决于 i18n 设置
 }
+*/
 
 // 如果使用 BaseButton，可以定义一个跳转方法
 // function goToLogin() {

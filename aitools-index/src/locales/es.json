@@ -1,0 +1,13 @@
+{
+  "header": {
+    "logoText": "MeetMind",
+    "features": "Características",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "login": "Iniciar Sesión"
+  },
+  "general": {
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  }
+}
