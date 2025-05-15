@@ -1,0 +1,72 @@
+/* Global SCSS Variables and Styles */
+
+// Example CSS Variables for theming (adapt as needed)
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+
+  --text-color: #212529;
+  --text-color-muted: #6c757d;
+  --background-color: #ffffff;
+  --surface-color: #f8f9fa; // For cards, etc.
+
+  --font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --spacing-base: 4px;
+  --spacing-xs: var(--spacing-base);      // 4px
+  --spacing-sm: calc(var(--spacing-base) * 2); // 8px
+  --spacing-md: calc(var(--spacing-base) * 4); // 16px
+  --spacing-lg: calc(var(--spacing-base) * 6); // 24px
+  --spacing-xl: calc(var(--spacing-base) * 8); // 32px
+
+  --border-radius: 0.25rem; // 4px
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Utility classes (optional)
+.container {
+  width: 100%;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) { max-width: 540px; }
+  @media (min-width: 768px) { max-width: 720px; }
+  @media (min-width: 992px) { max-width: 960px; }
+  @media (min-width: 1200px) { max-width: 1140px; }
+}
