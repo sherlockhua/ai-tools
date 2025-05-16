@@ -1,7 +1,7 @@
 <template>
   <footer>
     <!-- TheFooter content will go here -->
-    <p>&copy; {{ new Date().getFullYear() }} UniScribe Clone</p>
+    <p>&copy; {{ new Date().getFullYear() }} MeetMind </p>
   </footer>
 </template>
 
