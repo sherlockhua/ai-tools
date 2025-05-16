@@ -29,9 +29,12 @@
                 <label for="message">{{ $t('contactView.form.messageLabel') }}</label>
                 <textarea id="message" v-model="formData.message" rows="5" :placeholder="$t('contactView.form.messagePlaceholder')" required></textarea>
               </div>
-              <button type="submit" class="submit-button">{{ $t('contactView.form.submitButton') }}</button>
+              <button type="submit" class="submit-button" :disabled="isLoading">
+                {{ isLoading ? $t('contactView.form.submittingButton') : $t('contactView.form.submitButton') }}
+              </button>
             </form>
             <p v-if="formSubmitted" class="form-success-message">{{ $t('contactView.form.successMessage') }}</p>
+            <p v-if="formError" class="form-error-message">{{ formError }}</p> <!-- 新增：显示错误信息 -->
           </div>
 
           
@@ -44,6 +47,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { submitContactForm } from '../api/contactService'; // 导入 API 服务函数
 
 const { t } = useI18n();
 
@@ -55,17 +59,43 @@ const formData = ref({
 });
 
 const formSubmitted = ref(false);
+const formError = ref('');
+const isLoading = ref(false);
 
-const handleSubmit = () => {
-  // 在实际应用中，这里会发送数据到后端
-  console.log('Form data submitted:', formData.value);
-  formSubmitted.value = true;
-  // 可以选择重置表单
-  // formData.value = { name: '', email: '', subject: '', message: '' };
-  // 几秒后隐藏成功消息
-  setTimeout(() => {
-    formSubmitted.value = false;
-  }, 5000);
+const handleSubmit = async () => {
+  isLoading.value = true;
+  formSubmitted.value = false;
+  formError.value = '';
+
+  try {
+    // 直接调用封装好的 API 函数
+    // formData.value 包含 name, email, subject, message，符合 contactService 的期望
+    await submitContactForm(formData.value);
+
+    // 提交成功
+    formSubmitted.value = true;
+    // 可选择重置表单
+    // formData.value = { name: '', email: '', subject: '', message: '' };
+    setTimeout(() => {
+      formSubmitted.value = false;
+    }, 5000);
+
+  } catch (error) {
+    // 根据错误类型处理错误信息
+    if (error.isApiError) {
+      // API 返回的错误 (例如 code !== 0 或 HTTP 错误状态)
+      formError.value = error.message || t('contactView.form.errorMessageDefault');
+    } else if (error.isNetworkError) {
+      // 网络错误
+      formError.value = error.message || t('contactView.form.errorNetwork');
+    } else {
+      // 其他未知错误
+      console.error('Contact form submission error:', error);
+      formError.value = t('contactView.form.errorMessageDefault');
+    }
+  } finally {
+    isLoading.value = false;
+  }
 };
 </script>
 
