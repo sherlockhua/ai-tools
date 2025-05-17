@@ -9,5 +9,28 @@
   "general": {
     "submit": "Soumettre",
     "cancel": "Annuler"
-  }
+  },
+  "homeView": {
+  "title": "Extraction de comptes rendus de réunion par IA à partir de vidéos",
+  "subtitle": "Téléchargez votre vidéo de réunion et laissez l'IA générer des comptes rendus précis et structurés en quelques secondes.",
+  "cta": "Essayer maintenant",
+  "steps": {
+    "1": "Télécharger la vidéo de la réunion",
+    "2": "Analyse intelligente par IA",
+    "3": "Compte rendu généré automatiquement"
+  },
+  "featuresTitle": "Pourquoi choisir l'IA pour les comptes rendus ?",
+  "features": [
+    "Reconnaissance des intervenants et extraction des points clés",
+    "Génération de résumés rapide et précise",
+    "Prise en charge de plusieurs langues et scénarios",
+    "Sécurisé et conforme à la confidentialité"
+  ],
+  "useCasesTitle": "Cas d'utilisation typiques",
+  "useCases": [
+    "Comptes rendus de réunions à distance",
+    "Résumé d'entretiens",
+    "Notes de cours en ligne"
+  ]
+}
 }

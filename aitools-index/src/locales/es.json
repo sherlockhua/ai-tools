@@ -9,5 +9,28 @@
   "general": {
     "submit": "Enviar",
     "cancel": "Cancelar"
-  }
+  },
+  "homeView": {
+  "title": "Extracción de actas de reuniones con IA desde video",
+  "subtitle": "Sube tu video de reunión y deja que la IA genere actas precisas y estructuradas en segundos.",
+  "cta": "Probar ahora",
+  "steps": {
+    "1": "Subir video de reunión",
+    "2": "Análisis inteligente de IA",
+    "3": "Acta generada automáticamente"
+  },
+  "featuresTitle": "¿Por qué elegir IA para actas de reuniones?",
+  "features": [
+    "Reconocimiento de oradores y extracción de puntos clave",
+    "Generación de resúmenes rápida y precisa",
+    "Soporte para múltiples idiomas y escenarios",
+    "Seguro y conforme a la privacidad"
+  ],
+  "useCasesTitle": "Casos de uso típicos",
+  "useCases": [
+    "Actas de reuniones remotas",
+    "Resumen de entrevistas",
+    "Notas de cursos en línea"
+  ]
+}
 }

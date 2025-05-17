@@ -10,6 +10,83 @@
     "submit": "提交",
     "cancel": "取消"
   },
+  "pricingView": {
+    "title": "选择最适合您的方案",
+    "subtitle": "将您的音视频内容快速转换为文字，提高工作效率",
+    "monthly": "月付",
+    "yearly": "年付",
+    "saveBadge": "节省 20%",
+    "plans": {
+      "free": {
+        "title": "免费版",
+        "price": "0",
+        "billingNote": "永久免费",
+        "features": {
+          "hours": "每月 1 小时音视频转写额度",
+          "languages": "仅支持中文转写",
+          "editing": "基础文本编辑",
+          "export": "导出 TXT 格式",
+          "accuracy": "标准转写准确率",
+          "support": "社区支持"
+        },
+        "cta": "免费开始"
+      },
+      "basic": {
+        "title": "基础版",
+        "price": {
+          "monthly": "6",
+          "yearly": "4.99"
+        },
+        "yearlyTotal": "年付 $59.88",
+        "features": {
+          "hours": "每月 5 小时音视频转写额度",
+          "languages": "支持中文、英文转写",
+          "editing": "基础文本编辑功能",
+          "export": "导出 TXT 格式",
+          "accuracy": "标准转写准确率",
+          "support": "邮件支持"
+        },
+        "cta": "开始使用"
+      },
+      "pro": {
+        "title": "专业版",
+        "popular": "最受欢迎",
+        "price": {
+          "monthly": "10",
+          "yearly": "8.99"
+        },
+        "yearlyTotal": "年付 $107.88",
+        "features": {
+          "hours": "每月 20 小时音视频转写额度",
+          "languages": "支持 10+ 种语言转写",
+          "editing": "高级文本编辑与格式化",
+          "export": "导出多种格式 (TXT, DOCX, SRT)",
+          "accuracy": "高精度转写准确率",
+          "support": "优先技术支持",
+          "batch": "批量处理功能",
+          "vocabulary": "自定义词汇表"
+        },
+        "cta": "立即升级"
+      }
+    },
+    "faq": {
+      "title": "常见问题",
+      "questions": {
+        "usage": {
+          "title": "如何计算使用时长？",
+          "answer": "使用时长按照实际转写的音视频时长计算，每月1日重置额度。"
+        },
+        "formats": {
+          "title": "支持哪些文件格式？",
+          "answer": "支持 MP3, MP4, WAV, MOV 等常见音视频格式，专业版支持更多格式。"
+        },
+        "cancel": {
+          "title": "可以随时取消订阅吗？",
+          "answer": "是的，您可以随时取消订阅，已支付的费用将按剩余天数比例退还。"
+        }
+      }
+    }
+  },
   "uploadView": {
     "title": "上传您的文件",
     "description": "将文件拖放到此处或点击浏览。",
@@ -42,5 +119,28 @@
       "phoneNumber": "+1 (555) 123-4567",
       "mapPlaceholder": "地图将在此处显示"
     }
-  }
+  },
+  "homeView": {
+  "title": "AI智能视频会议纪要提取",
+  "subtitle": "上传会议视频，AI自动生成结构化高质量会议纪要，提升效率，聚焦重点。",
+  "cta": "立即体验",
+  "steps": {
+    "1": "上传会议视频",
+    "2": "AI智能分析",
+    "3": "自动生成纪要"
+  },
+  "featuresTitle": "为什么选择AI会议纪要？",
+  "features": [
+    "发言人识别与重点提取",
+    "高效准确的纪要生成",
+    "多语言多场景支持",
+    "安全合规，隐私保护"
+  ],
+  "useCasesTitle": "典型应用场景",
+  "useCases": [
+    "远程会议纪要",
+    "访谈内容整理",
+    "线上课程笔记"
+  ]
+}
 }

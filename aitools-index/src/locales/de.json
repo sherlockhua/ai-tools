@@ -9,5 +9,28 @@
   "general": {
     "submit": "Senden",
     "cancel": "Abbrechen"
-  }
+  },
+  "homeView": {
+  "title": "KI-gestützte Protokoll-Extraktion aus Videos",
+  "subtitle": "Laden Sie Ihr Meeting-Video hoch und lassen Sie die KI in Sekunden präzise, strukturierte Protokolle erstellen.",
+  "cta": "Jetzt ausprobieren",
+  "steps": {
+    "1": "Meeting-Video hochladen",
+    "2": "KI-gestützte Analyse",
+    "3": "Protokoll automatisch erstellt"
+  },
+  "featuresTitle": "Warum KI für Meeting-Protokolle?",
+  "features": [
+    "Sprechererkennung und Schlüsselpunktextraktion",
+    "Schnelle und präzise Zusammenfassung",
+    "Unterstützt mehrere Sprachen und Szenarien",
+    "Sicher und datenschutzkonform"
+  ],
+  "useCasesTitle": "Typische Anwendungsfälle",
+  "useCases": [
+    "Protokolle für Remote-Meetings",
+    "Interview-Zusammenfassungen",
+    "Notizen für Online-Kurse"
+  ]
+}
 }
